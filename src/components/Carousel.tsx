@@ -45,26 +45,30 @@ export function Carousel({ children }: PropsWithChildren) {
       </Swiper>
 
       <div className="container">
-        <div className="mt-6 flex items-center justify-between gap-4">
-          <div className="text-xs text-neutral-400" aria-live="polite">
+        <div className="mt-4 md:mt-6 flex flex-col sm:flex-row items-center justify-between gap-3 md:gap-4">
+          <div className="text-xs md:text-sm text-neutral-400 order-2 sm:order-1" aria-live="polite">
             Slide {activeIndex + 1} / {slides.length}
           </div>
-          <button
-            ref={prevRef}
-            aria-label={`Ir para o slide ${activeIndex}`}
-            onClick={() => instance?.slidePrev()}
-            className="btn-neon"
-          >
-            ← Anterior
-          </button>
-          <button
-            ref={nextRef}
-            aria-label={`Ir para o slide ${Math.min(activeIndex + 2, slides.length)}`}
-            onClick={() => instance?.slideNext()}
-            className="btn-neon btn-neon-pink"
-          >
-            Próximo →
-          </button>
+          <div className="flex items-center gap-2 md:gap-3 order-1 sm:order-2">
+            <button
+              ref={prevRef}
+              aria-label={`Ir para o slide ${activeIndex}`}
+              onClick={() => instance?.slidePrev()}
+              className="btn-neon text-xs md:text-sm px-3 md:px-4 py-1.5 md:py-2"
+            >
+              <span className="hidden sm:inline">← Anterior</span>
+              <span className="sm:hidden">←</span>
+            </button>
+            <button
+              ref={nextRef}
+              aria-label={`Ir para o slide ${Math.min(activeIndex + 2, slides.length)}`}
+              onClick={() => instance?.slideNext()}
+              className="btn-neon btn-neon-pink text-xs md:text-sm px-3 md:px-4 py-1.5 md:py-2"
+            >
+              <span className="hidden sm:inline">Próximo →</span>
+              <span className="sm:hidden">→</span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
