@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+html, body, #root { height: 100%; }
+
+body {
+  @apply bg-white text-neutral-900 antialiased font-sans dark:bg-black dark:text-neutral-100;
+  background-color: #000000;
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="%2300f0ff" opacity="0.3"/><circle cx="12" cy="12" r="3" fill="%2300f0ff"/></svg>') 12 12, auto;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px),
+    radial-gradient(circle at 20% 50%, rgba(0, 240, 255, 0.1), transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 43, 214, 0.1), transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(168, 85, 247, 0.08), transparent 50%);
+  background-size: 50px 50px, 50px 50px, 100% 100%, 100% 100%, 100% 100%;
+  background-position: 0 0, 0 0, 0 0, 0 0, 0 0;
+  animation: gridMove 20s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes gridMove {
+  0% { background-position: 0 0, 0 0, 0 0, 0 0, 0 0; }
+  100% { background-position: 50px 50px, 50px 50px, 0 0, 0 0, 0 0; }
+}
+
+#root { position: relative; z-index: 1; }
+
+.container { @apply mx-auto max-w-6xl px-4; }
+
+a, button {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="%2300f0ff" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="%2300f0ff"/></svg>') 12 12, pointer;
+}
+
+.cursor-grab {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%2300f0ff" d="M13 6v5h5v2h-5v5h-2v-5H6v-2h5V6h2z"/></svg>') 12 12, grab !important;
+}
+
+.cursor-grab.active\\:cursor-grabbing:active {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="%23ff2bd6" opacity="0.5"/><circle cx="12" cy="12" r="3" fill="%23ff2bd6"/></svg>') 12 12, grabbing !important;
+}
+
+@layer components {
+  /* Inputs */
+  .input-neon {
+    @apply w-full rounded-lg bg-neutral-900/40 border border-neon-cyan/20 text-neutral-200 px-4 py-2 placeholder-neutral-500 transition-colors;
+    box-shadow: inset 0 0 10px rgba(0, 240, 255, 0.08);
+  }
+
+  .input-neon:focus {
+    @apply outline-none border-neon-cyan/50;
+    box-shadow: 0 0 12px rgba(0, 240, 255, 0.25), inset 0 0 12px rgba(0, 240, 255, 0.15);
+  }
+
+  .dark .input-neon {
+    @apply bg-neutral-900/40 text-neutral-200;
+  }
+  .input-neon {
+    @apply bg-white/70 text-neutral-900;
+  }
+
+  .card-neon {
+    @apply rounded-xl border border-neon-cyan/20 backdrop-blur-sm transition-all duration-300;
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.08), inset 0 0 20px rgba(0, 240, 255, 0.04);
+    background: rgba(255,255,255,0.7);
+  }
+
+  .card-neon:hover {
+    @apply border-neon-cyan/40;
+    box-shadow: 0 0 25px rgba(0, 240, 255, 0.3), inset 0 0 30px rgba(0, 240, 255, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .dark .card-neon {
+    background: rgba(17, 24, 39, 0.6);
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.1), inset 0 0 20px rgba(0, 240, 255, 0.05);
+  }
+
+  .btn-neon {
+    @apply inline-flex items-center gap-1.5 sm:gap-2 rounded-lg px-3 sm:px-6 py-2 sm:py-3 text-xs sm:text-sm font-bold transition-all duration-300;
+    color: #0b1e24;
+    background: linear-gradient(135deg, rgba(0, 240, 255, 0.25), rgba(255, 43, 214, 0.25));
+    border: 2px solid rgba(0, 240, 255, 0.5);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.4), inset 0 0 10px rgba(0, 240, 255, 0.2);
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.8);
+  }
+
+  .btn-neon:hover {
+    border-color: rgba(0, 240, 255, 0.8);
+    box-shadow: 0 0 30px rgba(0, 240, 255, 0.6), inset 0 0 15px rgba(0, 240, 255, 0.3);
+    transform: translateY(-2px);
+  }
+
+  .dark .btn-neon { color: #fff; }
+
+  .btn-neon-pink {
+    background: linear-gradient(135deg, rgba(255, 43, 214, 0.2), rgba(168, 85, 247, 0.2));
+    border-color: rgba(255, 43, 214, 0.5);
+    box-shadow: 0 0 20px rgba(255, 43, 214, 0.4), inset 0 0 10px rgba(255, 43, 214, 0.2);
+    text-shadow: 0 0 10px rgba(255, 43, 214, 0.8);
+  }
+
+  .btn-neon-pink:hover {
+    border-color: rgba(255, 43, 214, 0.8);
+    box-shadow: 0 0 30px rgba(255, 43, 214, 0.6), inset 0 0 15px rgba(255, 43, 214, 0.3);
+  }
+
+  .badge-tech {
+    @apply inline-block rounded-md px-3 py-1.5 text-xs font-medium transition-all duration-300 border;
+    background: rgba(0, 240, 255, 0.08);
+    border-color: rgba(0, 240, 255, 0.25);
+    color: #0b1e24;
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.15);
+  }
+
+  .badge-tech:hover {
+    background: rgba(0, 240, 255, 0.2);
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+    transform: scale(1.05);
+  }
+
+  .dark .badge-tech { color: #00f0ff; }
+}
+
+@layer utilities {
+  .text-neon-gradient {
+    background: linear-gradient(90deg, #00f0ff, #ff2bd6, #a855f7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glow 3s ease-in-out infinite alternate;
+  }
+  
+  .text-neon-cyan {
+    color: #00f0ff;
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.8), 0 0 20px rgba(0, 240, 255, 0.4);
+  }
+
+  .text-neon-pink {
+    color: #ff2bd6;
+    text-shadow: 0 0 10px rgba(255, 43, 214, 0.8), 0 0 20px rgba(255, 43, 214, 0.4);
+  }
+
+  .border-neon-glow {
+    border-color: #00f0ff;
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.5), inset 0 0 10px rgba(0, 240, 255, 0.2);
+  }
+}
