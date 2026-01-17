@@ -159,6 +159,164 @@ export const cv: CV = {
       links: {
         github: 'https://github.com/Gian-UC/hospitalhub'
       }
+    },
+    {
+      title: 'E-commerce Order System',
+      description:
+        'Sistema de pedidos e-commerce com arquitetura event-driven usando Kafka. Três microserviços: Orders (gestão de pedidos), Inventory (controle de estoque), Notifications (envio de emails). Dashboard React com atualizações em tempo real via SignalR. Implementa padrões CQRS e event sourcing.',
+      tech: [
+        '.NET 8',
+        'Apache Kafka',
+        'React',
+        'PostgreSQL',
+        'Redis',
+        'SignalR',
+        'Docker',
+        'Entity Framework Core'
+      ],
+      links: {}
+    },
+    {
+      title: 'Real-time Log Streaming Platform',
+      description:
+        'Plataforma de processamento e análise de logs em tempo real usando Kafka como message broker. Consumer em .NET processa logs de múltiplas aplicações, categorizando por severidade. Dashboard Angular exibe métricas e gráficos em tempo real com Chart.js.',
+      tech: [
+        'C#',
+        '.NET 8',
+        'Apache Kafka',
+        'Angular',
+        'ClickHouse',
+        'Chart.js',
+        'Docker',
+        'Grafana'
+      ],
+      links: {}
+    },
+    {
+      title: 'Sistema de RH Completo',
+      description:
+        'Plataforma completa para gestão de recursos humanos: controle de funcionários, folha de pagamento, ponto eletrônico, gestão de férias e benefícios. Autenticação via Keycloak com roles (admin, manager, employee). Relatórios interativos e upload de documentos para Azure Blob Storage.',
+      tech: [
+        'React',
+        '.NET 8',
+        'PostgreSQL',
+        'Keycloak',
+        'Azure Blob Storage',
+        'Chart.js',
+        'Docker'
+      ],
+      links: {}
+    },
+    {
+      title: 'AI-Powered CRM',
+      description:
+        'CRM inteligente com IA generativa para gestão de leads e pipeline de vendas. Sugestão automática de emails, resumo de conversas e análise de sentimento usando OpenAI. Notificações em tempo real via SignalR. Armazena documentos no MongoDB e dados estruturados no PostgreSQL.',
+      tech: [
+        'React',
+        '.NET 8',
+        'OpenAI API',
+        'MongoDB',
+        'PostgreSQL',
+        'SignalR',
+        'Azure AI',
+        'Docker'
+      ],
+      links: {}
+    },
+    {
+      title: 'Code Assistant with RAG',
+      description:
+        'Assistente de código inteligente usando Retrieval-Augmented Generation (RAG). Permite upload de documentação técnica (PDF, MD) para criar base de conhecimento. Chat interativo para consultar docs, gerar código e explicar erros. Vector database (Pinecone) + OpenAI embeddings.',
+      tech: [
+        'Python',
+        'LangChain',
+        'React',
+        'OpenAI',
+        'Pinecone',
+        'FastAPI',
+        'Monaco Editor',
+        'Docker'
+      ],
+      links: {}
+    },
+    {
+      title: 'Social Media Sentiment Analyzer',
+      description:
+        'Analisador de sentimento em redes sociais para marcas e produtos. Coleta tweets/posts, processa com modelos de NLP (BERT/GPT) e exibe dashboard com gráficos de evolução de sentimento. Armazena posts no MongoDB e analytics no PostgreSQL.',
+      tech: [
+        'Python',
+        'Angular',
+        'BERT',
+        'OpenAI',
+        'MongoDB',
+        'PostgreSQL',
+        'FastAPI',
+        'Chart.js'
+      ],
+      links: {}
+    },
+    {
+      title: 'Self-Service DevOps Portal',
+      description:
+        'Portal self-service para desenvolvedores criarem ambientes e deploys via interface. Backend .NET controla Kubernetes (client-go), gera Terraform/Helm charts dinamicamente. Dashboards Grafana + Prometheus para observabilidade. Implementa práticas de Platform Engineering.',
+      tech: [
+        'React',
+        '.NET 8',
+        'Kubernetes',
+        'Terraform',
+        'Helm',
+        'Grafana',
+        'Prometheus',
+        'Docker'
+      ],
+      links: {}
+    },
+    {
+      title: 'API Gateway with Advanced Features',
+      description:
+        'Gateway centralizado para múltiplos microserviços com rate limiting (Redis), circuit breaker e retry policies (Polly). Métricas detalhadas com OpenTelemetry e Jaeger. Autenticação JWT e roteamento inteligente usando Ocelot.',
+      tech: [
+        'C#',
+        '.NET 8',
+        'Ocelot',
+        'Redis',
+        'Polly',
+        'OpenTelemetry',
+        'Jaeger',
+        'Docker'
+      ],
+      links: {}
+    },
+    {
+      title: 'Gamified Learning Platform',
+      description:
+        'Plataforma de cursos online com sistema de gamificação: pontos, badges e ranking em tempo real. Vídeos, quizzes e acompanhamento de progresso. SignalR para notificações e chat ao vivo. Leaderboards armazenados em Redis para performance.',
+      tech: [
+        'React',
+        '.NET 8',
+        'SignalR',
+        'PostgreSQL',
+        'Redis',
+        'Azure Media Services',
+        'Docker'
+      ],
+      links: {}
+    },
+    {
+      title: 'API Marketplace with Metering',
+      description:
+        'Marketplace onde desenvolvedores publicam e consomem APIs. Kafka processa stream de chamadas para billing e analytics. Sistema de metering conta uso por API key com limites por plano. Integração com Stripe para pagamentos.',
+      tech: [
+        'Angular',
+        '.NET 8',
+        'Apache Kafka',
+        'PostgreSQL',
+        'Redis',
+        'Stripe API',
+        'Docker',
+        'Grafana'
+      ],
+      links: {}
     }
   ],
   skills: {
